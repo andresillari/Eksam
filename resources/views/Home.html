@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Makete</title>
+  </head>
+
+  <link href="/public/css/MaketeCSS.css" rel="stylesheet" >
+
+  <body>
+<!-- <div class="hero">
+<div class="hero-image" style="background-image: url('/views/images/Tahistaevas.jpg');"></div>
+<button class="welcome"  onClick="location.href='Home.html';">
+Welcome
+</button>
+</div>  -->
+<div class="image-container">
+  <button class="welcome"  onClick="location.href='Home.html';">
+    Welcome
+    </button>
+	<div class="image-position">
+		<img src="http://getwallpapers.com/wallpaper/full/d/7/3/369465.jpg" alt="">
+	</div>
+	<div class="image-track"></div>
+</div>
+
+</body>
+
+	
+<script>
+(() => {
+	'use strict';
+	
+	const imageHover = () => {
+		const $imageTrack = document.querySelector('.image-track');
+		const $imagePosition = document.querySelector('.image-position');
+
+		$imageTrack.addEventListener('mousemove', (e) => {
+			const imageX = `calc(5% + ${e.offsetX / -10}px)`;
+			const imageY = `calc(${e.offsetY / -10}px)`;
+
+			$imagePosition.style.transform = `translate(${imageX}, ${imageY})`;
+		});
+	};
+
+	imageHover();
+})();
+
+</script>
+	
+</html>

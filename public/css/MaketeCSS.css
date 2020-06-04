@@ -1,0 +1,268 @@
+@import url(//fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Roboto&family=Tangerine:wght@700&display=swap);
+body {
+  margin: 0;
+  font-family: Roboto;
+}
+
+a {
+  color: #FFFFFF;
+  font-family: Roboto;
+}
+.logo{
+	width: 45px;
+	height: 35px;
+    font-family: 'Petit Formal Script';
+}
+/* header */
+
+.header {
+
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 6;
+  background-color: rgba(0,0,0,0.50);
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 25px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .nav-icon {
+background: #FFFFFF;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .nav-icon:before,
+.header .menu-icon .nav-icon:after {
+  background:rgba(255,255,255,1.00);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .nav-icon:before {
+  top: 5px;
+}
+
+.header .menu-icon .nav-icon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 500px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top:0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top:0;
+}
+
+
+/* 48em = 768px @ 16pt font */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px 5px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+a.effect-underline:after {
+	content: '';
+  position: relative;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 2px solid;
+  margin: 0px;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+a.effect-underline:hover:after {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.parallax {
+	position: absolute;
+	width: 100%;
+}
+
+.image-container,
+.container {
+
+	max-width: 100%;
+}
+
+
+.image-container {
+	box-shadow: 0 10px 10px #b0b0b0;
+	overflow: hidden;
+	position: relative;
+}
+.welcome {
+  color:#FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Lobster;
+  font-size:9vw;
+  z-index: 3;
+  background-color: transparent;
+  border:none;
+  overflow: hidden; 
+  cursor:pointer;
+  background-repeat:no-repeat;
+  transition: 0.4s ease-out;
+}
+
+.welcome:hover{
+	
+    transform: scale(1.2) translate(-45%, -45%);
+} 
+
+.image-track {
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.image-position {
+	transition: transform 0.1s linear;
+
+}
+
+img {
+  display: block;
+  height: 100%;
+  max-width: 100%;
+  position: relative;
+  transform: scale(1.4);
+  width: 100%;
+}
+
+
+/* .hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image { 
+   width: calc(100% + 150px); 
+   height: calc(100% + 150px);
+   display:block; 
+   position: absolute; 
+   top: -100px; 
+   left: -100px; 
+   background-position: top center; 
+   background-size: cover; 
+   background-repeat: no-repeat; 
+   z-index: 1;
+} 
+
+.welcome {
+  color:#FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Lobster;
+  font-size:9vw;
+  z-index: 3;
+  background-color: transparent;
+  border:none;
+  overflow: hidden; 
+  cursor:pointer;
+  background-repeat:no-repeat;
+  transition: 0.4s ease-out;
+}
+
+.welcome:hover{
+	
+    transform: scale(1.2) translate(-45%, -45%);
+} */
